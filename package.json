@@ -1,0 +1,11 @@
+{
+  "name": "s65_the_funniest_animal_videos",
+  "version": "1.0.0",
+  "description": "The **Funniest Animal Videos** project is an interactive web application designed to collect, showcase, and celebrate the most hilarious animal videos shared by users. This platform allows users to log in and access a personalized feed of funny animal videos tailored to their interests and preferences. Users can submit their own favorite videos, vote on submissions from others, and engage with the community through comments. The project aims to create a fun and engaging environment where users can share laughter and connect over their love for animals.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
