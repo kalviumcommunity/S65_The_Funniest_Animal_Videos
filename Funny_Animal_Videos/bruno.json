@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Funny_Animal_Videos",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
