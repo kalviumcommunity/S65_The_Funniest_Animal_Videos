@@ -1,14 +1,33 @@
 import { motion } from 'framer-motion';
 import { Play, Heart, Upload, LogIn, Video, TrendingUp, Search } from 'lucide-react';
+import FeaturesCard from '../components/FeatureCard';
 
 const Landing = () => {
+  const features = [
+    { 
+      icon: <Heart className="w-8 h-8" />, 
+      title: "Share Joy", 
+      description: "Upload your favorite pet moments" 
+    },
+    { 
+      icon: <Video className="w-8 h-8" />, 
+      title: "Watch & Enjoy", 
+      description: "Endless entertainment from pets worldwide" 
+    },
+    { 
+      icon: <TrendingUp className="w-8 h-8" />, 
+      title: "Go Viral", 
+      description: "Let your pet become the next sensation" 
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section with Video Background */}
       <div className="relative h-screen">
         {/* Video Background */}
         <div className="absolute inset-0 w-full h-full">
-          <div className="absolute inset-0 bg-black/50 z-10" /> {/* Overlay */}
+          <div className="absolute inset-0 bg-black/50 z-10" />
           <video 
             autoPlay 
             loop 
@@ -29,7 +48,7 @@ const Landing = () => {
             whileHover={{ scale: 1.1 }}
             className="flex items-center space-x-2"
           >
-            <Search className="w-8 h-8" /> {/* Changed icon */}
+            <Search className="w-8 h-8" />
             <span className="text-3xl font-bold">PawPlay</span>
           </motion.div>
           
@@ -126,22 +145,13 @@ const Landing = () => {
             viewport={{ once: true }}
             className="grid grid-cols-1 md:grid-cols-3 gap-12"
           >
-            {[
-              { icon: <Heart className="w-8 h-8" />, title: "Share Joy", description: "Upload your favorite pet moments" },
-              { icon: <Video className="w-8 h-8" />, title: "Watch & Enjoy", description: "Endless entertainment from pets worldwide" },
-              { icon: <TrendingUp className="w-8 h-8" />, title: "Go Viral", description: "Let your pet become the next sensation" }
-            ].map((feature, index) => (
-              <motion.div
+            {features.map((feature, index) => (
+              <FeaturesCard
                 key={index}
-                whileHover={{ y: -10 }}
-                className="p-8 border border-black/10 rounded-2xl text-center"
-              >
-                <div className="flex flex-col items-center space-y-4">
-                  {feature.icon}
-                  <h3 className="text-xl font-semibold">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                </div>
-              </motion.div>
+                icon={feature.icon}
+                title={feature.title}
+                description={feature.description}
+              />
             ))}
           </motion.div>
         </div>
